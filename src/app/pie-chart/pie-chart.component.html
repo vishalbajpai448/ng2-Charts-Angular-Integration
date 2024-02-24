@@ -1,0 +1,26 @@
+<div class="pieChart mt-5">
+    <canvas baseChart class="chart" [data]="pieChartData" [type]="pieChartType" [options]="pieChartOptions"
+        [plugins]="pieChartPlugins">
+    </canvas>
+
+    <div class="button-row ">
+        <button class="btn btn-outline-primary btnWrap" (click)="toggleLegend()">
+            Toggle Legend
+        </button>
+        <button class="btn btn-outline-primary btnWrap" (click)="changeLabels()">
+            Change Labels
+        </button>
+        <button class="btn btn-outline-primary btnWrap" (click)="addSlice()">
+            Add Slice
+          </button>
+          <button class="btn btn-outline-primary btnWrap" (click)="removeSlice()">
+            Remove Slice
+          </button>
+          <button
+          class="btn btn-outline-primary btnWrap"
+            (click)="changeLegendPosition()"
+          >
+            Change Legend Position
+          </button>
+    </div>
+</div>

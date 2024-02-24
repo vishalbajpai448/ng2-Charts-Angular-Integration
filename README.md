@@ -1,27 +1,53 @@
-# SpeechRecognition
+# Angular Charts Integration using ng2 Charts
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    Install ng2-charts using npm
 
-## Code scaffolding
+npm install --save ng2-charts
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Install Chart.js library
 
-## Build
+npm install --save chart.js
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+In order to use ng2-charts you need to import NgChartsModule:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { NgChartsModule } from 'ng2-charts';
 
-## Running end-to-end tests
+// In your App's module:
+imports: [
+  NgChartsModule
+]
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Global configuration
 
-## Further help
+When you import NgChartsModule you can pass a global configuration object to it:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+import { NgChartsModule } from 'ng2-charts';
+
+// In your App's module:
+imports: [
+  NgChartsModule.forRoot({ defaults: { ... } })
+]
+
+Alternatively, include a provider in your module, or one of the parent modules:
+
+import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
+
+imports: [
+  NgChartsModule
+],
+providers: [
+  { provide: NgChartsConfiguration, useValue: { generateColors: false }}
+]
+
+## Additional configuration
+
+Install libraries if required, for example -
+
+<!-- For adding datalables plugins -->
+npm install chartjs-plugin-datalabels 

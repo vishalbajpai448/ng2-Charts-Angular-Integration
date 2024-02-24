@@ -1,0 +1,9 @@
+<div class="barChart mt-5">
+    <canvas baseChart class="chart" [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
+        [type]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+    </canvas>
+
+    <button class="btn btn-outline-primary" (click)="randomize()">
+        Update
+    </button>
+</div>
